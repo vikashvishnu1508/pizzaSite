@@ -11,21 +11,15 @@
       <h2>No. 1, Shollinganallur, Chennai, 600119</h2>
     </div>
 
-    <div class="menuBar">
-        <div class="home">
-          Home
-        </div>
-        <div class="menu">
-          Menu
-        </div>
-        <div class="contact">
-          Contact Us
-        </div>
-    </div>
+    <h1>My Pizza List</h1>
 
-    <div class="ourMenu">
-      <h1>Our Menu</h1>
-      
+		<div class="selectPizza">
+      <ul>
+        {% for pizza in pizzas %}
+            <li>{{ pizza.name }}</li>
+        {% endfor %}
+      </ul>
     </div>
+    <h4>No of pizza available : {{pizzasCount}}</h4>
   </body>
 </html>
