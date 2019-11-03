@@ -12,14 +12,29 @@
     </div>
 
     <h1>My Pizza List</h1>
-
-		<div class="selectPizza">
-      <ul>
-        {% for pizza in pizzas %}
-            <li>{{ pizza.name }}</li>
-        {% endfor %}
-      </ul>
+    <div class="newForms">
+      <form class="selectedPizza" action="{% url 'cost' %}" method="POST">
+        <select class="pizzasList" id="myPizzaID" name="pizzaNameSelected" required>
+            <option value="" disabled selected>Select your pizza</option>
+            {% for pizza in pizzas %}
+              <option value="{{pizza.id}}">{{pizza.name}}</option>
+            {% endfor %}
+        </select>
+        <select class="pizzaSizeAvailable" id="myPizzaSizeID" name="pizzaSizeSelected" required>
+            <option value="" disabled selected>Select your size</option>
+            {% for pizzaSize in pizzaSizes %}
+              <option value="{{pizzaSize.id}}">{{pizzaSize.size}}</option>
+            {% endfor %}
+        </select>
+        <select multiple class="toppingsAvailable" id="myToppingsID" name="toppingSelected">
+            <option value="" disabled selected>Select your toppings</option>
+            {% for topping in toppings %}
+              <option value="{{topping.id}}">{{topping.toppingName}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="OK">
+      </form>
     </div>
-    <h4>No of pizza available : {{pizzasCount}}</h4>
+    <h3>Pizza Cost = {{cost}}</h3>
   </body>
 </html>
