@@ -13,7 +13,8 @@
 
     <h1>My Pizza List</h1>
     <div class="newForms">
-      <form class="selectedPizza" action="{% url 'cost' %}" method="POST">
+      <form class="selectedPizza" action="{% url 'index' %}" method="post">
+      {% csrf_token %}
         <select class="pizzasList" id="myPizzaID" name="pizzaNameSelected" required>
             <option value="" disabled selected>Select your pizza</option>
             {% for pizza in pizzas %}
