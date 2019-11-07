@@ -13,7 +13,7 @@
 
     <h1>My Pizza List</h1>
     <div class="newForms">
-      <form class="selectedPizza" action="{% url 'index' %}" method="post">
+      <form class="selectedPizza" action="{% url 'cost' %}" method="post">
       {% csrf_token %}
         <select class="pizzasList" id="myPizzaID" name="pizzaNameSelected" required>
             <option value="" disabled selected>Select your pizza</option>
@@ -21,7 +21,7 @@
               <option value="{{pizza.id}}">{{pizza.name}}</option>
             {% endfor %}
         </select>
-        <select class="pizzaSizeAvailable" id="myPizzaSizeID" name="pizzaSizeSelected" required>
+        <select class="pizzaSize" id="myPizzaSizeID" name="pizzaSizeSelected" required>
             <option value="" disabled selected>Select your size</option>
             {% for pizzaSize in pizzaSizes %}
               <option value="{{pizzaSize.id}}">{{pizzaSize.size}}</option>
