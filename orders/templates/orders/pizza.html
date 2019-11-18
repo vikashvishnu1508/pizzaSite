@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vikash Pizza</title>
+  </head>
+  <body>
+
+    <form action="." method="post" > {%csrf_token%}
+    {{ pizzaName.as_p }}
+    {{ pizzaSize.as_p }}
+    {{ topping.as_p }}
+    <input type="submit" value="OK">
+    </form>
+
+  </body>
+</html>
